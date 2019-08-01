@@ -1,0 +1,20 @@
+package com.dls.arctic.test;
+
+import com.dls.dao.UserDao;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = "classpath:spring.xml")
+public class UserTest {
+    @Autowired
+    UserDao userdao;
+    @Test
+    public void test(){
+        System.out.println(userdao.getUserByUsername("whe"));
+        System.out.println("!");
+    }
+}
